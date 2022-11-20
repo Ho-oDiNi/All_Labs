@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\AALABS\Сиаод\A1A2\A1A2\A1A2\Source.cpp(50,15): warning C4101: data: неиспользованная локальная переменная
+D:\AALABS\Сиаод\A1A2\A1A2\A1A2\Source.cpp(154,15): warning C4101: X: неиспользованная локальная переменная
+  A1A2.vcxproj -> D:\AALABS\Сиаод\A1A2\A1A2\Debug\A1A2.exe

@@ -1,0 +1,204 @@
+#include <SFML/Graphics.hpp>
+#include <iostream>
+
+using namespace sf;
+
+class tPoint {
+
+private:
+    CircleShape circle;
+
+protected:
+    float x;
+    float y;
+    Color color;
+    int move;
+
+public:
+    void set_x(int px) {
+        x = px;
+    }
+    void set_y(int py) {
+        y = py;
+    }
+    int get_x() {
+        return x;
+    }
+    int get_y() {
+        return y;
+    }
+    void set_color (Color pcolor) {
+        color = pcolor;
+    }
+    Color get_color() {
+        return color;
+    }
+    void set_move(int pmove) {
+        move = pmove;
+    }
+    int get_move() {
+        return move;
+    }
+    void draw_point(sf::RenderWindow& window) {
+        CircleShape circle(2.f);
+        circle.setFillColor(this->get_color());
+        circle.setPosition(this->get_x(), this->get_y());
+        window.draw(circle);
+    }
+    void delete_point(sf::RenderWindow& window) {
+        CircleShape circle(2.f);
+        circle.setFillColor(Color::Black);
+        circle.setPosition(this->get_x(), this->get_y());
+        window.draw(circle);
+    }
+    void move_directly(sf::RenderWindow& window) {
+        switch (move) {
+        case 0:
+            delete_point(window);
+            set_x(get_x() + 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 1:
+            delete_point(window);
+            set_x(get_x() - 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 2:
+            delete_point(window);
+            set_y(get_y() + 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 3:
+            delete_point(window);
+            set_y(get_y() - 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        }
+        if (get_x() == 0) {
+            move = 0;
+        }
+        if (get_x() == 500) {
+            move = 1;
+        }
+        if (get_y() == 0) {
+            move = 2;
+        }
+        if (get_y() == 500) {
+            move = 3;
+        }
+    }
+
+    void move_random(sf::RenderWindow& window) {
+        move = rand() % 4;
+        if (get_x() == 0) {
+            move = 0;
+        }
+        if (get_x() == 500) {
+            move = 1;
+        }
+        if (get_y() == 0) {
+            move = 2;
+        }
+        if (get_y() == 500) {
+            move = 3;
+        }
+        switch (move) {
+        case 0:
+            delete_point(window);
+            set_x(get_x() + 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 1:
+            delete_point(window);
+            set_x(get_x() - 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 2:
+            delete_point(window);
+            set_y(get_y() + 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        case 3:
+            delete_point(window);
+            set_y(get_y() - 1);
+            circle.move(get_x(), get_y());
+            draw_point(window);
+            break;
+        }
+    }
+};
+
+int main()
+{
+    RenderWindow window(VideoMode(500, 500), "SFML works!");
+
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+        tPoint masPoint[100];
+        for(int i = 0; i < 100; i++) {
+            int x = rand() % 500;
+            int y = rand() % 500;
+            masPoint[i].set_x(x);
+            masPoint[i].set_y(y);
+            masPoint[i].set_move(rand() % 4);
+            int color = rand() % 5;
+            switch (color) {
+            case 0:
+                masPoint[i].set_color(Color::White);
+                break;
+            case 1:
+                masPoint[i].set_color(Color::Blue);
+                break;
+            case 2:
+                masPoint[i].set_color(Color::Red);
+                break;
+            case 3:
+                masPoint[i].set_color(Color::Green);
+                break;
+            case 4:
+                masPoint[i].set_color(Color::Yellow);
+                break;
+            }
+    }
+        for (int i = 0; i < 100; i++) {
+            masPoint[i].draw_point(window);
+        }
+        window.display();
+        int c;
+        std::cin >> c;
+        
+        if (c == 1)
+        {
+            while (true)
+                for (int i = 0; i < 100; i++) {
+                    masPoint[i].move_directly(window);
+                    window.display();
+                }
+        }
+        if (c == 2)
+        {
+            while (true)
+                for (int i = 0; i < 100; i++) {
+                    masPoint[i].move_random(window);
+                    window.display();
+                }
+        }
+
+        getchar();
+    }
+
+    return 0;
+}

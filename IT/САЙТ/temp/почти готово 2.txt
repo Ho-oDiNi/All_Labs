@@ -1,0 +1,406 @@
+<script>
+/* <![CDATA[ */
+
+
+    function click_here()
+    {
+       var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+
+       multiplier_click ++;
+
+      var count_click = Number(localStorage.getItem("count_click"));
+        
+      count_click = count_click + multiplier_click;
+
+      localStorage.setItem("count_click", count_click);
+      document.getElementById("count_click").innerHTML = count_click;
+      
+    }
+    function change_img_click()
+    {
+        var img = "https://i.ibb.co/BsbGddz/click2.png";
+        document.getElementById("myImage").src= img;
+    }    
+    function change_img_anclick()
+    {
+        var img = "https://i.ibb.co/Xx2Mcp9/anclick2.png";
+        document.getElementById("myImage").src= img;
+    }    
+
+
+/*]]>*/
+</script>
+<div style="margin-left: 35%; margin-right: auto">
+    <button type="button" onmousedown="click_here(); change_img_click();" onmouseup="change_img_anclick();" style=
+    "display: flex; width: 300px; vertical-align: top; padding: 0; margin: 0; justify-content: center;"><img id='myImage' src="https://i.ibb.co/Xx2Mcp9/anclick2.png" height="100%" width="100%" align=
+    "center" name="myImage" /></button>
+</div>
+<script>
+/* <![CDATA[ */
+        function check()
+    {
+       
+      var count_click = Number(localStorage.getItem("count_click"));
+      document.getElementById("count_click").innerHTML = count_click;
+    }
+    window.addEventListener("load", check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="count_click" name="count_click"></span>
+</div>
+<script>
+/* <![CDATA[ */
+    var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+    if(multiplier_click==0)
+    {
+        multiplier_click = 1;
+    }
+    
+    var count_click = Number(localStorage.getItem("count_click"));
+    
+    var random_click = Number(localStorage.getItem("random_click"));
+    
+    var farm_click = Number(localStorage.getItem("farm_click"));
+    
+    function timer() {
+        count_click = Number(localStorage.getItem("count_click"));
+        
+        count_click = count_click + random_click*multiplier_click;
+        localStorage.setItem("count_click", count_click);
+        document.getElementById("count_click").innerHTML = count_click;
+        
+        count_click = count_click + farm_click*2*multiplier_click;
+        localStorage.setItem("count_click", count_click);
+        document.getElementById("count_click").innerHTML = count_click;
+    }
+    setInterval(timer, 5000);
+/*]]>*/
+</script>
+
+
+
+///////
+
+
+<div>
+    <script>
+    /* <![CDATA[ */
+
+        
+
+    function change_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+                var random_click = Number(localStorage.getItem("random_click"));
+        if(check_count_click < ((random_click+1) * 12))
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        }
+        else
+        {  
+        var col = "#57dede";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }    
+    }    
+    function unchange_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));   
+                var random_click = Number(localStorage.getItem("random_click"));
+        if(check_count_click < ((random_click+1) * 12))
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+        else
+        {
+        var col = "#04baba";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }
+    }
+        
+        
+        
+        function random_click()
+    {
+        var count_click = Number(localStorage.getItem("count_click"));
+        var random_click = Number(localStorage.getItem("random_click"));
+        if(count_click >=((random_click+1) * 12))
+        {
+            count_click = count_click -((random_click+1) * 12);
+            random_click = random_click + 1;
+            localStorage.setItem("random_click", random_click);
+            localStorage.setItem("count_click", count_click);
+            document.getElementById("random_click").innerHTML = random_click;
+        }
+        
+     }
+
+    /*]]>*/
+    </script> <button id="Random_button" style=
+    "display: inline-block; font-size: 1em; font-weight: 400; line-height: 1.5; margin: 1em 0; text-align: center; border-radius: 50px; padding: 10px 20px; border: 2px solid #6592a7; transition: color .2s ease-in-out; outline: none; background-color: #04baba; color: #ffffff; border-color: #04baba; cursor:pointert;"
+    type="button" onmousedown="random_click(); change_random_button();" onmouseup="unchange_random_button();check_count_click();" name="Random_button">Buy</button>
+</div>
+<script>
+/* <![CDATA[ */
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        var check_random_click = Number(localStorage.getItem("random_click")); 
+        if(check_count_click < ((check_random_click+1) * 12))
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+/*]]>*/
+</script> 
+<script>
+
+
+
+
+
+
+
+
+/* <![CDATA[ */
+        function random_check()
+    {
+       
+      var random_click = Number(localStorage.getItem("random_click"));
+      document.getElementById("random_click").innerHTML = random_click;
+    }
+    window.addEventListener("load", random_check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="random_click" name="random_click"></span>
+</div>
+
+
+////
+
+
+
+<div>
+    <script>
+    /* <![CDATA[ */
+
+        
+
+    function change_farm_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+                var farm_click = Number(localStorage.getItem("farm_click"));
+        if(check_count_click < ((farm_click+1) * 15))
+        {
+        var col = "#6592a7";
+        document.getElementById("Farm_button").style.backgroundColor= col;   
+        }
+        else
+        {  
+        var col = "#57dede";
+        document.getElementById("Farm_button").style.backgroundColor= col;
+        }    
+    }    
+    function unchange_farm_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+                var farm_click = Number(localStorage.getItem("farm_click"));
+        if(check_count_click < ((farm_click+1) * 15))
+        {
+        var col = "#6592a7";
+        document.getElementById("Farm_button").style.backgroundColor= col;   
+        } 
+        else
+        {
+        var col = "#04baba";
+        document.getElementById("Farm_button").style.backgroundColor= col;
+        }
+    }
+        
+        
+        
+        function farm_click()
+    {
+        var count_click = Number(localStorage.getItem("count_click"));
+                var farm_click = Number(localStorage.getItem("farm_click"));
+        if(count_click >= ((farm_click+1) * 15))
+        {
+            count_click = count_click-((farm_click+1) * 15);
+            farm_click = farm_click + 1;
+            localStorage.setItem("farm_click", farm_click);
+            localStorage.setItem("count_click", count_click);
+            document.getElementById("farm_click").innerHTML = farm_click;
+        }
+        
+     }
+
+    /*]]>*/
+    </script> <button id="Farm_button" style=
+    "display: inline-block; font-size: 1em; font-weight: 400; line-height: 1.5; margin: 1em 0; text-align: center; border-radius: 50px; padding: 10px 20px; border: 2px solid #6592a7; transition: color .2s ease-in-out; outline: none; background-color: #04baba; color: #ffffff; border-color: #04baba; cursor:pointert;"
+    type="button" onmousedown="farm_click(); change_farm_button();" onmouseup="unchange_farm_button();check_count_click();" name="Farm_button">Buy</button>
+</div>
+<script>
+/* <![CDATA[ */
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        var check_farm_click = Number(localStorage.getItem("farm_click"));
+        if(check_count_click < ((check_farm_click+1) * 15))
+        {
+        var col = "#6592a7";
+        document.getElementById("Farm_button").style.backgroundColor= col;   
+        } 
+/*]]>*/
+</script> 
+<script>
+
+
+
+
+
+
+
+
+
+
+/* <![CDATA[ */
+        function farm_check()
+    {
+       
+      var farm_click = Number(localStorage.getItem("farm_click"));
+      document.getElementById("farm_click").innerHTML = farm_click;
+    }
+    window.addEventListener("load", farm_check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="farm_click" name="farm_click"></span>
+</div>
+
+
+
+/////
+
+
+
+
+<div>
+    <script>
+    /* <![CDATA[ */
+
+        
+
+    function change_multiplier_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+                var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+        if(check_count_click < ((multiplier_click+1) * 100))
+        {
+        var col = "#6592a7";
+        document.getElementById("Multiplier_button").style.backgroundColor= col;   
+        }
+        else
+        {  
+        var col = "#57dede";
+        document.getElementById("Multiplier_button").style.backgroundColor= col;
+        }    
+    }    
+    function unchange_multiplier_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+                var multiplier_click = Number(localStorage.getItem("multiplier_click"));        
+        if(check_count_click < ((multiplier_click+1) * 100))
+        {
+        var col = "#6592a7";
+        document.getElementById("Multiplier_button").style.backgroundColor= col;   
+        } 
+        else
+        {
+        var col = "#04baba";
+        document.getElementById("Multiplier_button").style.backgroundColor= col;
+        }
+    }
+        
+        
+        
+        function multiplier_click()
+    {
+        var count_click = Number(localStorage.getItem("count_click"));
+        var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+        if(count_click >= ((multiplier_click+1) * 100))
+        {
+            count_click = count_click - ((multiplier_click+1) * 100);
+            multiplier_click = multiplier_click + 1;
+            localStorage.setItem("multiplier_click", multiplier_click);
+            localStorage.setItem("count_click", count_click);
+            document.getElementById("multiplier_click").innerHTML = multiplier_click;
+        }
+        
+     }
+
+    /*]]>*/
+    </script> <button id="Multiplier_button" style=
+    "display: inline-block; font-size: 1em; font-weight: 400; line-height: 1.5; margin: 1em 0; text-align: center; border-radius: 50px; padding: 10px 20px; border: 2px solid #6592a7; transition: color .2s ease-in-out; outline: none; background-color: #04baba; color: #ffffff; border-color: #04baba; cursor:pointert;"
+    type="button" onmousedown="multiplier_click(); change_multiplier_button();" onmouseup="unchange_multiplier_button();check_count_click();" name="Multiplier_button">Buy</button>
+</div>
+<script>
+/* <![CDATA[ */
+        var check_count_click = Number(localStorage.getItem("count_click"));
+        var check_multiplier_click = Number(localStorage.getItem("multiplier_click"));
+        if(check_count_click < ((check_multiplier_click+1) * 100))
+        {
+        var col = "#6592a7";
+        document.getElementById("Multiplier_button").style.backgroundColor= col;   
+        } 
+/*]]>*/
+</script> 
+<script>
+
+
+
+
+
+
+
+
+/* <![CDATA[ */
+        function multiplier_check()
+    {
+       
+      var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+      document.getElementById("multiplier_click").innerHTML = multiplier_click;
+    }
+    window.addEventListener("load", multiplier_check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="multiplier_click" name="multiplier_click"></span>
+</div>
+
+
+//// 
+
+
+
+<p style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="cookiespersecond">
+</p>
+<script>
+/* <![CDATA[ */
+    var multiplier_click = Number(localStorage.getItem("multiplier_click"));
+    multiplier_click++;
+    var random_click = Number(localStorage.getItem("random_click"));
+    var farm_click = Number(localStorage.getItem("farm_click"));
+    var temp = (((random_click)+(farm_click*2))*multiplier_click);
+    
+    document.getElementById('cookiespersecond').innerHTML = "You are gaining " + temp + " Cookies per/s";
+/*]]>*/
+</script>

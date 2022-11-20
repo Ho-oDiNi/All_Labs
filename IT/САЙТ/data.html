@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML><HEAD><TITLE>2.4</TITLE>
+</HEAD>
+<BODY>
+<p align=justify>
+<p align=center><table border=0><tr valign=top><td>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+function setClock() { // Первый пример
+	
+	var now = localStorage.getItem("now");
+	if(!now)
+	{
+		var now = new Date();  
+		var day = now.getDate();
+		var hour = now.getHours();
+		var minute = now.getMinutes();
+		localStorage.setItem("now", now);
+		localStorage.setItem("day", day);
+		localStorage.setItem("hour", hour);
+		localStorage.setItem("minute", minute);
+	}
+	else
+	{
+		var day_old = localStorage.getItem("day");
+		var hour_old = localStorage.getItem("hour");
+		var minute_old = localStorage.getItem("minute");
+		
+		var now_new = new Date();
+		var day_new = now_new.getDate();
+		var hour_new = now_new.getHours();
+		var minute_new = now_new.getMinutes();
+		
+		alert(minute_new-minute_old);
+	}
+	
+	function setClock()
+
+	
+}
+
+function setNight() { 
+	document.location.reload();
+	}
+
+</SCRIPT>
+</td>
+
+<td>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+</SCRIPT>
+</td>
+</tr>
+</table>
+<p align = "center">
+<button type = "button" onclick = "setClock()">Текущее время</button>
+<button type = "button" onclick = "setNight()">Ночь</button>
+<button type = "button" onclick = "document.write(setNoon()), document.write(setDate())">Полдень</button>
+</p>
+</BODY></HTML>

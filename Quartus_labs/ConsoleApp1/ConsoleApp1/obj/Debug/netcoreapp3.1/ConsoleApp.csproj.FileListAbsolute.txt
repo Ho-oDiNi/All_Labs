@@ -1,0 +1,13 @@
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.exe
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.deps.json
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.json
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.dev.json
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfoInputs.cache
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfo.cs
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\AALABS\Quartus_labs\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache

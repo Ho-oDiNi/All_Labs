@@ -1,0 +1,36 @@
+div.btn {
+
+background: url (2.png); /* Путь к файлу с исходным рисунком */
+
+width: 480px; /* Ширина рисунка */
+
+height: 360px; /* Высота рисунка */
+
+}
+
+div.btn:hover {
+
+background: url (1.png); /* Путь к файлу с заменяемым рисунком */
+
+}
+
+<style type="text/css">
+.demoizo {
+  display: block;
+  text-align: center;
+ }
+
+.demoizo:hover, .demoizo:focus, .demoizo:active {
+  background: url(1.png) no-repeat 50% 50%;
+ }
+
+.demoizo:hover img, .demoizo:focus img, .demoizo:active img  {
+  background: transparent;
+  visibility: hidden;
+}
+</style>
+
+
+<a href="#" class="demoizo">
+<img src="2.png" />
+</a>

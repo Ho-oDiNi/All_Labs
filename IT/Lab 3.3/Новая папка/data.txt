@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<note> 	
+	<faculty name="ИВТ">
+		<course num="1">
+			<group name="ИП-013">
+				<student name ="Ириков Е.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Бакаутов М.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Казьмин С.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+			</group>
+			<group name="ИП-011">
+				<student name ="Иванов И.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Петров П.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Сидоров С.">
+					<rating name ="pr1">0</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+			</group>
+		</course>
+		<course num="2">
+			<group name="ИП-913">
+				<student name ="Исакова А.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Семёнов О.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">0</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Панфилова У.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+			</group>
+			<group name="ИП-910">
+				<student name ="Власов М.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">0</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+				<student name ="Новиков С.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Кручинкина А.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+			</group>
+		</course>	
+	</faculty>
+	<faculty name="АВЛ">
+		<course num="1">
+			<group name="АС-021">
+				<student name ="Безродный Я.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">0</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Хорошилов М.">
+					<rating name ="pr1">0</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Романенко А.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+			</group>
+			<group name="АС-023">
+				<student name ="Дагирова И.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">0</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Гулина Н.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Николаичев О.">
+					<rating name ="pr1">0</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+			</group>
+		</course>
+		<course num="2">
+			<group name="ИС-915">
+				<student name ="Таскаев С.">
+					<rating name ="pr1">0</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">0</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+				<student name ="Хороших А.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Братчиков Р.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+			</group>
+			<group name="ИС-917">
+				<student name ="Ефремовича Л.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">0</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+				<student name ="Кахадзе Е.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">0</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Гориславский А.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+			</group>
+		</course>	
+	</faculty>
+	<faculty name="АЭС">
+		<course num="1">
+			<group name="АП-011">
+				<student name ="Козлаков П.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">0</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+				<student name ="Чилаева Г.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Близнюк Ю.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+			</group>
+			<group name="АП-012">
+				<student name ="Ямзин Ф.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Новокшонова Б.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Жаркин О.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+			</group>
+		</course>
+		<course num="2">
+			<group name="ОП-916">
+				<student name ="Раскатова А.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">0</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Эйбоженко А.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">0</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Дьякова А.">
+					<rating name ="pr1">0</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+			</group>
+			<group name="ОП-919">
+				<student name ="Тянникова В.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">1</rating>
+					<rating name ="pr3">2</rating>
+					<rating name ="pr4">1</rating>
+					<rating name ="pr5">2</rating>
+					<rating name ="pr6">1</rating>
+					<rating name ="pr7">2</rating>
+				</student>
+				<student name ="Язькова Я.">
+					<rating name ="pr1">1</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">0</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">0</rating>
+				</student>
+				<student name ="Жиганов Д.">
+					<rating name ="pr1">2</rating>
+					<rating name ="pr2">2</rating>
+					<rating name ="pr3">1</rating>
+					<rating name ="pr4">2</rating>
+					<rating name ="pr5">1</rating>
+					<rating name ="pr6">2</rating>
+					<rating name ="pr7">1</rating>
+				</student>
+			</group>
+		</course>	
+	</faculty>
+</note> 
+

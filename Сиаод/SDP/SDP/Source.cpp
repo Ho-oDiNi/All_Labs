@@ -1,0 +1,243 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+
+using namespace std;
+
+struct tVertex
+{
+    int data;
+    tVertex* left;
+    tVertex* right;
+};
+
+typedef struct tVertex pVertex;
+
+pVertex* BalansTree(int L, int R, int* mass)
+{
+    int m;
+    pVertex* p;
+    if (L > R) return NULL;
+    else
+    {
+        m = (L + R) / 2;
+        p = (pVertex*)malloc(sizeof(pVertex));
+        p->data = mass[m];
+        p->left = BalansTree(L, m - 1, mass);
+        p->right = BalansTree(m + 1, R, mass);
+        return p;
+    }
+}
+
+void AddTree(pVertex** root, int D)
+{
+    pVertex** p = root;
+
+    while (*p != NULL)
+    {
+        if (D < (*p)->data)
+            p = &((*p)->left);
+        else
+            p = &((*p)->right);
+    }
+    if (*p == NULL)
+    {
+        *p = (pVertex*)malloc(sizeof(pVertex));
+        (*p)->data = D;
+        (*p)->left = (*p)->right = NULL;
+    }
+}
+
+
+void print_tree_left(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        print_tree_left(tree->left);
+        printf("%2d ", tree->data);
+        print_tree_left(tree->right);
+    }
+}
+
+void print_tree_down(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        printf("%2d ", tree->data);
+        print_tree_down(tree->left);
+        print_tree_down(tree->right);
+    }
+}
+
+void print_tree_up(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        print_tree_up(tree->left);
+        print_tree_up(tree->right);
+        printf("%2d ", tree->data);
+    }
+}
+
+int HeightTree(pVertex* p)
+{
+    int pl = 0;
+    int pr = 0;
+    if (p == NULL) return 0;
+    else
+    {
+        pl = HeightTree(p->left);
+        pr = HeightTree(p->right);
+        return 1 + ((pl > pr) ? pl : pr);
+    }
+}
+
+int AverageHeight(pVertex* p, int L)
+{
+    if (p == NULL) return 0;
+    else return L + AverageHeight(p->left, L + 1) + AverageHeight(p->right, L + 1);
+}
+
+int SizeTree(pVertex* p)
+{
+    if (p == NULL) return 0;
+    else return 1 + SizeTree(p->left) + SizeTree(p->right);
+}
+
+float AverageHeightTree(pVertex* p)
+{
+    return(AverageHeight(p, 1) / (float)SizeTree(p));
+}
+
+int Control_Sum(pVertex* p)
+{
+    if (p == NULL) return 0;
+    else return p->data + Control_Sum(p->left) + Control_Sum(p->right);
+}
+
+void deleteAddTree(pVertex** root, int X)
+{
+    pVertex** p = root;
+    pVertex* q, * r, * s;
+    while (*p != NULL)
+    {
+        if ((*p)->data < X)
+            p = &((*p)->right);
+        else if ((*p)->data > X)
+            p = &((*p)->left);
+        else break;
+    }
+    if (*p != NULL)
+    {
+        q = *p;
+        if (q->left = NULL)
+            *p = q->right;
+        else if (q->right == NULL)
+            *p = q->left;
+        else
+        {
+            r = q->left;
+            s = q;
+        }
+       // while (r->right != NULL)
+       // {
+         //   s = r;
+        //    r = r->right;
+       // }
+        if (r->right == NULL)
+        {
+            r->right = q->right;
+            *p = r;
+        }
+        else
+        {
+            while (r->right != NULL)
+            {
+                s = r;
+                r = r->right;
+            }
+        s->right = r->left;
+        r->left = q->left;
+        r->right = q->right;
+        *p = r;
+        }
+    }
+    free(q);
+}
+
+int print_all_func(pVertex* root)
+{
+    int temp, X;
+    while (true)
+    {
+        printf("\nНажмите:");
+        printf("\n1 - обход слева-направо");
+        printf("\n2 - обход сверху-вниз");
+        printf("\n3 - обход снизу-вверх");
+        printf("\n4 - высота дерева");
+        printf("\n5 - средняя высота дерева");
+        printf("\n6 - размер дерева");
+        printf("\n7 - контрольная сумма");
+        printf("\n8 - удаление X");
+        printf("\n0 - выход\n");
+        cin >> temp;
+        switch (temp)
+        {
+        case 1:
+            print_tree_left(root);
+            break;
+        case 2:
+            print_tree_down(root);
+            break;
+        case 3:
+            print_tree_up(root);
+            break;
+        case 4:
+            printf("Высота дерева: %d", HeightTree(root));
+            break;
+        case 5:
+            printf("Средняя высота дерева: %2.2f", AverageHeightTree(root));
+            break;
+        case 6:
+            printf("Размер дерева %d", SizeTree(root));
+            break;
+        case 7:
+            printf("Контрольная сумма %d", Control_Sum(root));
+            break;
+        case 8:
+            printf("Введите X:");
+            cin >> X;
+            deleteAddTree(&root, X);
+            break;
+        case 0:
+            return 1;
+        }
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    pVertex* root = NULL;
+    int n, i;
+    printf("\n Введите N:");
+    cin >> n;
+
+    int* mass = new int[n];
+    for (i = 0; i < n; i++)
+    {
+        mass[i] = i;
+        printf("%2d ", mass[i]);
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        AddTree(&root, mass[i]);
+    }
+
+    print_all_func(root);
+
+    return 1;
+}

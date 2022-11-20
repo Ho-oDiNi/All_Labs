@@ -1,0 +1,5 @@
+nech(A,B) :- A>B.
+nech(A,B) :- A=<B, D is A mod 2, D>0,write(A),A1 is A+2,nech(A1,B).
+nech(A,B) :- A1 is A+1,nech(A1,B).
+
+?-nech(1, 10).

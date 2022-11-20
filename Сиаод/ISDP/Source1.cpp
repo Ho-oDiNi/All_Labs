@@ -1,0 +1,202 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+
+using namespace std;
+
+struct tVertex
+{
+    int data;
+    tVertex* left;
+    tVertex* right;
+};
+
+typedef struct tVertex pVertex;
+
+pVertex* Add_left(pVertex* p, int* mass, int& i)
+{
+    p = (pVertex*)malloc(sizeof(pVertex));
+    p->data = mass[++i];
+
+    p->left = NULL;
+    p->right = NULL;
+
+    return p;
+}
+
+pVertex* Add_right(pVertex* p, int* mass, int& i)
+{
+    p = (pVertex*)malloc(sizeof(pVertex));
+    p->data = mass[++i];
+
+    p->left = NULL;
+    p->right = NULL;
+
+    return p;
+}
+
+pVertex* my_Tree(int* mass)
+{
+    int i = 0;
+    pVertex* p, * t;
+    p = (pVertex*)malloc(sizeof(pVertex));
+    p->data = mass[++i];
+    t = p;
+
+    t->left = (pVertex*)malloc(sizeof(pVertex));
+    t->left->data = mass[++i];
+
+    t->left->left = (pVertex*)malloc(sizeof(pVertex));
+    t->left->left->data = mass[++i];
+    t->left->left->left = NULL;
+    t->left->left->right = NULL;
+
+    t->left->right = (pVertex*)malloc(sizeof(pVertex));
+    t->left->right->data = mass[++i];
+    t->left->right->left = NULL;
+    t->left->right->right = NULL;
+
+    t->right = (pVertex*)malloc(sizeof(pVertex));
+    t->right->data = mass[++i];
+    t->right->left = NULL;
+
+    t->right->right = (pVertex*)malloc(sizeof(pVertex));
+    t->right->right->data = mass[++i];
+
+    t->right->right->left = NULL;
+    t->right->right->right = NULL;
+
+
+    return p;
+}
+
+void print_tree_left(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        print_tree_left(tree->left);
+        printf("%2d ", tree->data);
+        print_tree_left(tree->right);
+    }
+}
+
+void print_tree_down(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        printf("%2d ", tree->data);
+        print_tree_down(tree->left);
+        print_tree_down(tree->right);
+    }
+}
+
+void print_tree_up(pVertex* tree)
+{
+    if (tree != NULL)
+    {
+        print_tree_up(tree->left);
+        print_tree_up(tree->right);
+        printf("%2d ", tree->data);
+    }
+}
+
+int HeightTree(pVertex* p)
+{
+    int pl = 0;
+    int pr = 0;
+    if (p == NULL) return 0;
+    else
+    {
+        pl = HeightTree(p->left);
+        pr = HeightTree(p->right);
+        return 1 + ((pl > pr) ? pl : pr);
+    }
+}
+
+int AverageHeight(pVertex* p, int L)
+{
+    if (p == NULL) return 0;
+    else return L + AverageHeight(p->left, L + 1) + AverageHeight(p->right, L + 1);
+}
+
+int SizeTree(pVertex* p)
+{
+    if (p == NULL) return 0;
+    else return 1 + SizeTree(p->left) + SizeTree(p->right);
+}
+
+float AverageHeightTree(pVertex* p)
+{
+    return(AverageHeight(p, 1) / (float)SizeTree(p));
+}
+
+int Control_Sum(pVertex* p)
+{
+    if (p == NULL) return 0;
+    else return p->data + Control_Sum(p->left) + Control_Sum(p->right);
+}
+
+int print_all_func(pVertex* root)
+{
+    int temp;
+    while (true)
+    {
+        printf("\nНажмите:");
+        printf("\n1 - обход слева-направо");
+        printf("\n2 - обход сверху-вниз");
+        printf("\n3 - обход снизу-вверх");
+        printf("\n4 - высота дерева");
+        printf("\n5 - средняя высота дерева");
+        printf("\n6 - размер дерева");
+        printf("\n7 - контрольная сумма");
+        printf("\n0 - выход\n");
+        cin >> temp;
+        switch (temp)
+        {
+        case 1:
+            print_tree_left(root);
+            break;
+        case 2:
+            print_tree_down(root);
+            break;
+        case 3:
+            print_tree_up(root);
+            break;
+        case 4:
+            printf("Высота дерева: %d", HeightTree(root));
+            break;
+        case 5:
+            printf("Средняя высота дерева: %2.2f", AverageHeightTree(root));
+            break;
+        case 6:
+            printf("Размер дерева %d", SizeTree(root));
+            break;
+        case 7:
+            printf("Контрольная сумма %d", Control_Sum(root));
+            break;
+        case 0:
+            return 1;
+        }
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    pVertex* root = NULL;
+    int n = 10, i;
+
+    int* mass = new int[n];
+    for (i = 1; i <= 6; i++)
+    {
+        mass[i] = i;
+        printf("%2d ", mass[i]);
+    }
+    root = my_Tree(mass);
+
+    print_all_func(root);
+
+    return 1;
+}

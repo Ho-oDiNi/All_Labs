@@ -1,0 +1,76 @@
+Intel Core i5-7300HQ Processor
+Dgemv
+Float
+None
+10
+30.000
+0.277025
+0.000549
+0.198142%
+1082937
+
+Intel Core i5-7300HQ Processor
+Dgemv
+Double
+None
+10
+30.000
+0.278597
+0.000397
+0.142501%
+1076827
+
+Intel Core i5-7300HQ Processor
+Dgemv
+Int
+None
+10
+30.000
+0.278558
+0.001323
+0.474775%
+1076999
+
+Intel Core i5-7300HQ Processor
+Dgemv
+Int
+-O1
+10
+30.000
+0.163772
+0.001536
+0.938086%
+1831976
+
+Intel Core i5-7300HQ Processor
+Dgemv
+Int
+-O2
+10
+30.000
+0.055397
+0.000552
+0.995917%
+5415958
+
+Intel Core i5-7300HQ Processor
+Dgemv
+Int
+-O3
+10
+30.000
+0.026622
+0.000371
+1.394820%
+11270874
+Intel Core i5-7300HQ Processor
+Dgemv
+Double
+None
+10
+30.000
+0.513801
+0.014074
+2.739238
+584311
+

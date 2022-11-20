@@ -1,0 +1,189 @@
+<script>
+/* <![CDATA[ */
+
+        
+    function click_here()
+    {
+      var count_click = Number(localStorage.getItem("count_click"));
+        
+      count_click++;
+
+      localStorage.setItem("count_click", count_click);
+      document.getElementById("count_click").innerHTML = count_click;
+      
+    }
+    function change_img_click()
+    {
+        var img = "https://i.ibb.co/BsbGddz/click2.png";
+        document.getElementById("myImage").src= img;
+    }    
+    function change_img_anclick()
+    {
+        var img = "https://i.ibb.co/Xx2Mcp9/anclick2.png";
+        document.getElementById("myImage").src= img;
+    }    
+    update();
+
+/*]]>*/
+</script>
+<div style="margin-left: 35%; margin-right: auto">
+    <button type="button" onmousedown="click_here(); change_img_click();" onmouseup="change_img_anclick();" style=
+    "display: flex; width: 300px; vertical-align: top; padding: 0; margin: 0; justify-content: center;"><img id='myImage' src="https://i.ibb.co/Xx2Mcp9/anclick2.png" height="100%" width="100%" align=
+    "center" name="myImage" /></button>
+</div>
+
+
+<div>
+    <script>
+    /* <![CDATA[ */
+
+
+    function change_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+        if(check_count_click<10)
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        }
+        else
+        {  
+        var col = "#57dede";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }    
+    }    
+    function unchange_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        if(check_count_click<10)
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+        else
+        {
+        var col = "#04baba";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }
+    }
+        
+        
+        
+        function random_click()
+    {
+        var count_click = Number(localStorage.getItem("count_click"));
+        var random_click = Number(localStorage.getItem("random_click"));
+        if(count_click>=10)
+        {
+            count_click = count_click-10;
+            random_click = random_click + 1;
+            localStorage.setItem("random_click", random_click);
+            localStorage.setItem("count_click", count_click);
+            document.getElementById("random_click").innerHTML = random_click;
+        }
+        
+     }
+
+    /*]]>*/
+    </script> <button id="Random_button" style=
+    "display: inline-block; font-size: 1em; font-weight: 400; line-height: 1.5; margin: 1em 0; text-align: center; border-radius: 50px; padding: 10px 20px; border: 2px solid #6592a7; transition: color .2s ease-in-out; outline: none; background-color: #04baba; color: #ffffff; border-color: #04baba; cursor:pointert;"
+    type="button" onmousedown="random_click(); change_random_button();" onmouseup="unchange_random_button();check_count_click();" name="Random_button">Buy</button>
+</div>
+<script>
+/* <![CDATA[ */
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        if(check_count_click<10)
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+/*]]>*/
+</script>
+
+<script>
+/* <![CDATA[ */
+        function check()
+    {
+       
+      var count_click = Number(localStorage.getItem("count_click"));
+      document.getElementById("count_click").innerHTML = count_click;
+    }
+    window.addEventListener("load", check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="count_click" name="count_click"></span>
+</div>
+
+
+
+<![CDATA[                                                                               ]]>
+
+
+
+<script>
+    function update() {
+ 
+
+        
+        document.getElementById('ammountMultiplier').innerHTML = "Multiplier Upgrade x" + (multiplier+1);
+        document.getElementById('ammountMultiplier2').innerHTML = "x" + (multiplier+1);
+
+        document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 100) + " Cookies";
+        document.getElementById('currentMultiplier').innerHTML = "Your current Multiplier is x" + (multiplier);
+        
+        document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
+        document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Cookies";
+        
+        document.getElementById('ammountFarms').innerHTML = "You Own " + farms + " Farms";
+        document.getElementById('costFarms').innerHTML = ((farms+1) * 15) + " Cookies";
+        
+        document.getElementById('cookiespersecond').innerHTML = "You are gaining " + (((autoClick)+(farms*2))*multiplier) + " Cookies per/s";
+    }
+    
+    var multiplier = 1;
+    var cookiecount = 0;
+    var autoClick = 0;
+    var farms = 0;
+    
+    function timer() {
+        cookiecount = cookiecount + autoClick*multiplier;
+        cookiecount = cookiecount + farms*2*multiplier;
+        update()
+    }
+    setInterval(timer, 1000)
+</script>
+<html>
+<head><title>0 Cookies</title></head>
+<body>
+
+    <p id="cookiespersecond">You are gaining 0 Cookies per/s</p>
+    
+    
+    
+    <p id="ammountMultiplier">Multiplier Upgrade x2</p>
+    <button><a href="#" onClick="buyMultiplier()"><span id="ammountMultiplier2">x2</span></a></button>
+    <p id="costMultiplier">200 Cookies</p>
+    <p id="currentMultiplier">Your current Multiplier is x1</p>
+    <br>
+    
+    <p>Buy 1 Auto Clicker</p>
+    <button><a href="#" onClick="buyAutoClick()"></a></button>
+    <p id="costAutoClick">12 Cookies</p>
+    <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+    
+    <br>
+    
+    <p>Buy 1 Farm</p>
+    <button><a href="#" onClick="buyFarm()"></button>
+    <p id="costFarms">15 Cookies</p>
+    <p id="ammountFarms">You Own 0 Farms</p>
+    
+    <script>
+    
+
+    </script>
+</body>
+</html>

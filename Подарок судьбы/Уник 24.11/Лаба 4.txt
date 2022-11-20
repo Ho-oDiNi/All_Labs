@@ -1,0 +1,81 @@
+#include <iostream>
+#include <complex>
+#include <cmath>
+#include <iomanip> 
+
+#define _USE_MATH_DEFINES
+
+using namespace std;
+
+static complex< double > Mi (0, 1);
+
+static int C=0;
+
+void fourier(complex<double> F[],complex<double> A[], int n)
+{
+  for (int i = 0; i <n;i++)
+  {
+    for (int j = 0; j <n;j++)
+    {
+      A[i] += exp((-2*M_PI*i*j)/n * Mi) *F[j];
+      C+=5;
+    }
+    complex< double > Kn (n, 0);
+    A[i] = A[i]/Kn;
+  }
+
+
+}
+
+void obrfourier(complex<double> F[],complex<double> A[], int n)
+{
+  for (int i = 0; i <n;i++)
+  {
+    F[i].real(0);
+    F[i].imag(0);
+    for (int j = 0; j <n;j++)
+    {
+      F[i] += exp((2*M_PI*i*j)/n * Mi)*A[j];
+      C+=5;
+    }
+  }
+
+
+}
+
+int main() {
+  int n = 4;
+  
+  
+  complex< double > F[n];
+  complex< double > A[n];
+  F[0].real(1); F[0].imag(0);
+  F[1].real(0); F[1].imag(0);
+  F[2].real(1); F[2].imag(0);
+  F[3].real(0); F[3].imag(0);
+  for (int i = 0; i<n;i++)
+  {
+   // F[i].real(i+1);
+   // F[i].imag(i);
+    cout << F[i] << "\n";
+  }  
+  cout << endl <<endl;
+
+  fourier (F,A,n);
+  for (int i = 0; i<n;i++)
+  {
+    cout <<fixed <<setprecision(3) << A[i] << "\n";
+  }
+  cout <<"\t C = " << C << endl << endl;
+  C = 0;
+  obrfourier(F,A,n);
+  for (int i = 0; i<n;i++)
+  {
+    //cout << A[i] << "\t";
+    cout <<fixed <<setprecision(2) << F[i] << "\n";
+  }
+  cout <<"\t C = " << C << endl << endl;
+
+
+  
+}

@@ -1,0 +1,353 @@
+#include <SFML/Graphics.hpp>
+#include <windows.h>
+#include <iostream>
+
+using namespace sf;
+
+class tFigure {
+protected:
+    CircleShape point;
+    RectangleShape section;
+
+    int x;
+    int y;
+    int move;
+    int length;
+    Color color;
+
+public:
+    void set_x(int px) {
+        x = px;
+    }
+    void set_y(int py) {
+        y = py;
+    }
+    int get_x() {
+        return x;
+    }
+    int get_y() {
+        return y;
+    }
+
+    Color random_color() {
+        int pcolor = rand() % 5;
+        switch (pcolor) {
+        case 0:
+            return Color::White;
+        case 1:
+            return Color::Blue;
+        case 2:
+            return Color::Red;
+        case 3:
+            return Color::Green;
+        case 4:
+            return Color::Yellow;
+        }
+    }
+    Color get_color() {
+        return color;
+    }
+
+    /****************************************************************************/
+
+    virtual void draw_point(sf::RenderWindow& window) {
+    
+    }
+    virtual void delete_point(sf::RenderWindow& window) {
+    
+    }
+    void move_directly(sf::RenderWindow& window) 
+    {
+        switch (move) {
+        case 0:
+            delete_point(window);
+            set_x(get_x() + 1);
+            draw_point(window);
+            break;
+        case 1:
+            delete_point(window);
+            set_x(get_x() - 1);
+            draw_point(window);
+            break;
+        case 2:
+            delete_point(window);
+            set_y(get_y() + 1);
+            draw_point(window);
+            break;
+        case 3:
+            delete_point(window);
+            set_y(get_y() - 1);
+            draw_point(window);
+            break;
+        }
+        if (get_x() == (0 + length)) {
+            move = 0;
+        }
+        if (get_x() == 500) {
+            move = 1;
+        }
+        if (get_y() == (0 + length)) {
+            move = 2;
+        }
+        if (get_y() == 500) {
+            move = 3;
+        }
+    }
+    virtual void delete_rotate_point(sf::RenderWindow& window, int angle) {
+    
+    }
+    virtual void rotation(sf::RenderWindow& window, int angle){
+        
+    }
+};
+
+
+class tCircle : public  tFigure {
+
+private:
+
+    CircleShape point;
+
+public:
+
+    tCircle()
+    {
+        length = rand() % 10 + 10;
+        point = CircleShape(length);
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        color = random_color();
+    }
+
+    void draw_point(sf::RenderWindow& window) override
+    {
+        point.setFillColor(get_color());
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void delete_point(sf::RenderWindow& window) override
+    {
+        point.setFillColor(Color::Black);
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void delete_rotate_point(sf::RenderWindow& window, int angle) override
+    {
+        point.rotate(angle);
+        point.setFillColor(Color::Black);
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void rotation(sf::RenderWindow& window, int angle) override
+    {
+        delete_rotate_point(window, angle - 2);
+        point.rotate(angle);
+        draw_point(window);
+    }
+};
+
+class tTriangle : public  tFigure {
+private:
+
+    CircleShape triangle;
+
+public:
+
+    tTriangle()
+    {
+        length = rand() % 10 + 10;
+        triangle = CircleShape(length, 3);
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        color = random_color();
+    }
+    void draw_point(sf::RenderWindow& window) override
+    {
+        triangle.setFillColor(get_color());
+        triangle.setPosition(get_x(), get_y());
+        window.draw(triangle);
+    }
+    void delete_point(sf::RenderWindow& window) override
+    {
+        triangle.setFillColor(Color::Black);
+        triangle.setPosition(get_x(), get_y());
+        window.draw(triangle);
+    }
+    void delete_rotate_point(sf::RenderWindow& window, int angle) override
+    {
+        triangle.rotate(angle);
+        triangle.setFillColor(Color::Black);
+        triangle.setPosition(get_x(), get_y());
+        window.draw(triangle);
+    }
+    void rotation(sf::RenderWindow& window, int angle) override
+    {
+        delete_rotate_point(window, angle - 2);
+        triangle.rotate(angle);
+        draw_point(window);
+    }
+};
+
+class tSquare : public  tFigure {
+private:
+
+    CircleShape square;
+
+public:
+
+    tSquare()
+    {
+        length = rand() % 10 + 10;
+        square = CircleShape(length, 4);
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        color = random_color();
+    }
+    void draw_point(sf::RenderWindow& window) override
+    {
+        square.setFillColor(get_color());
+        square.setPosition(get_x(), get_y());
+        window.draw(square);
+    }
+    void delete_point(sf::RenderWindow& window) override
+    {
+        square.setFillColor(Color::Black);
+        square.setPosition(get_x(), get_y());
+        window.draw(square);
+    }
+    void delete_rotate_point(sf::RenderWindow& window, int angle) override
+    {
+        square.rotate(angle);
+        square.setFillColor(Color::Black);
+        square.setPosition(get_x(), get_y());
+        window.draw(square);
+    }
+    void rotation(sf::RenderWindow& window, int angle) override
+    {
+        delete_rotate_point(window, angle - 2);
+        square.rotate(angle);
+        draw_point(window);
+    }
+};
+
+class tRectangle : public  tFigure {
+private:
+
+    RectangleShape point;
+
+public:
+
+    tRectangle()
+    {
+        length = rand() % 10 + 10;
+        point = RectangleShape(Vector2f(length, length));
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        color = random_color();
+    }
+    void draw_point(sf::RenderWindow& window) override
+    {
+        point.setFillColor(get_color());
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void delete_point(sf::RenderWindow& window) override
+    {
+        point.setFillColor(Color::Black);
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void delete_rotate_point(sf::RenderWindow& window, int angle) override
+    {
+        point.rotate(angle);
+        point.setFillColor(Color::Black);
+        point.setPosition(get_x(), get_y());
+        window.draw(point);
+    }
+    void rotation(sf::RenderWindow& window, int angle) override
+    {
+        delete_rotate_point(window, angle - 2);
+        point.rotate(angle);
+        draw_point(window);
+    }
+};
+
+static const int figureCount = 10, totalFigNum = 4;
+
+int main()
+{
+    
+    RenderWindow window(VideoMode(500, 500), "SFML works!");
+
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+        tFigure* figure[figureCount*totalFigNum];
+        tCircle masCircle[figureCount];
+        tTriangle masTriangle[figureCount];
+        tSquare masSquare[figureCount];
+        tRectangle masRectangle[figureCount];
+
+        for (int i = 0; i < figureCount; i++) {
+            figure[i] = &masCircle[i];
+            figure[i + figureCount] = &masTriangle[i];
+            figure[i + 2 * figureCount] = &masSquare[i];
+            figure[i + 3 * figureCount] = &masRectangle[i];
+        }
+
+        for (int i = 0; i < figureCount * totalFigNum; i++) {
+            figure[i]->draw_point(window);
+        }
+
+        window.display();
+        int c, time = 0, time2 = 0, angle = 1;
+        std::cin >> c;
+
+        for (int i = 0; i < figureCount * totalFigNum; i++) {
+            figure[i]->delete_point(window);
+        }
+
+        window.display();
+        if (c == 1)
+        {
+            window.clear();
+            while (true)
+            {
+                window.clear();
+                for (int i = 0; i < figureCount * totalFigNum; i++) {
+                    figure[i]->move_directly(window);
+                }
+                window.display();
+            }
+        }
+        if (c == 2)
+        {
+            window.clear();
+            while (true)
+            {
+                window.clear();
+                for (int i = 0; i < figureCount * totalFigNum; i++) {
+                    figure[i]->rotation(window, angle);
+                }
+
+                Sleep(100);
+                angle++;
+                
+                window.display();
+            }
+        }
+
+        getchar();
+    }
+
+    return 0;
+}

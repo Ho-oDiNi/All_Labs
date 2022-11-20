@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<data>
+	<fakultet name="ÈÂÒ">
+		<kurs value="1">
+			<gruppa name="ÈÏ-013">
+				<stud name="Ïåòðîâ È.È.">
+					<mark name="m1">2</mark>
+					<mark name="m2">1</mark>
+					<mark name="m3">2</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Ïåòðîâ È.È.">
+					<mark name="m1">2</mark>
+					<mark name="m2">1</mark>
+					<mark name="m3">2</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Ñòðîãàíîâ Â.Ñ.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<stud name="Ïèìåíîâ Ô.È.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<predmeti>
+					<predmet>Ìàòåìàòèêà</predmet>
+					<predmet>Ïðîãðàììèðîâàíèå</predmet>
+					<predmet>Èíôîðìàòèêà</predmet>
+					<predmet>Ýêîëîãèÿ</predmet>
+					<predmet>ÑÀÎÄ</predmet>
+					<predmet>Ôèçèêà</predmet>
+					<predmet>Ôèçè÷åñêàÿ Êóëüòóðà</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+		<kurs value="2">
+			<gruppa name="ÈÂ-022">
+				<stud name="Êèì Å.Ô.">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">1</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Îíåãèí À.Ñ.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">0</mark>
+					<mark name="m4">0</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<predmeti>
+					<predmet>Ìàòåìàòèêà</predmet>
+					<predmet>Ýë. òåõíèêà</predmet>
+					<predmet>Ìàò. Ëîãèêà</predmet>
+					<predmet>Ýêîíîìèêà</predmet>
+					<predmet>ÑÀÎÄ</predmet>
+					<predmet>ÎÎÏ</predmet>
+					<predmet>Ôèçè÷åñêàÿ Êóëüòóðà</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+	</fakultet>
+
+	<fakultet name="ÃÔ">
+		<kurs value="1">
+			<gruppa name="Ãô-11">
+				<stud name="Ïóïêîâ À.Ò.">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">2</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Êàçèìîâ Ò.Â.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<stud name="Èâàíîâ Ô.È.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<predmeti>
+					<predmet>Ìàò.àíàëèç</predmet>
+					<predmet>Èí ÿç</predmet>
+					<predmet>Ìèêðîýêîíîìèêà</predmet>
+					<predmet>Èñòîðèÿ</predmet>
+					<predmet>Íåì. ÿç</predmet>
+					<predmet>ÎÁÆ</predmet>
+					<predmet>Ôèçè÷åñêàÿ Êóëüòóðà</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+		<kurs value="2">
+			<gruppa name="Ãô-13">
+				<stud name="Ïóïêèí Å.Ô.">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">1</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Êèçÿêîâ À.Ñ.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">0</mark>
+					<mark name="m4">0</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<predmeti>
+					<predmet>Ñîöèëîãèÿ 1</predmet>
+					<predmet>Ðåãèîí.ýêîíîì</predmet>
+					<predmet>Ôèíàíñû</predmet>
+					<predmet>ÌÂÊÎ</predmet>
+					<predmet>Ñîöèëîãèÿ 2</predmet>
+					<predmet>ÌÌÈÒ</predmet>
+					<predmet>Ôèçè÷åñêàÿ Êóëüòóðà</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+	</fakultet>
+</data>

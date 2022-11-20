@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+<!-- Ссылка на таблицу XSL преобразований -->
+<?xml-stylesheet type="text/xsl" href="mystyle.xsl"?>
+
+<shop>
+     <product_type caption="Фрукты">
+       <product>Апельсины</product>
+       <product>Мандарины</product>
+       <product>Яблоки</product>
+     </product_type>
+
+     <product_type caption="Овощи">
+       <product>Морковь</product>
+       <product>Картофель</product>
+       <product>Огурцы</product>
+     </product_type>
+</shop>

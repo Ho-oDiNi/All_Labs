@@ -1,0 +1,93 @@
+<div>
+    <script>
+    /* <![CDATA[ */
+
+    var costAutoClick = Number(localStorage.getItem("costAutoClick"));    
+    if(costAutoClick == 0)
+    {
+        costAutoClick = 12;
+    }
+    var autoClick = Number(localStorage.getItem("autoClick"));  
+    var count_click = Number(localStorage.getItem("count_click"));
+        
+    function change_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));
+        if (count_click < ((autoClick+1) * 12))
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        }
+        else
+        {  
+        var col = "#57dede";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }    
+    }    
+    function unchange_random_button()
+    {
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        if (count_click < ((autoClick+1) * 12))
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+        else
+        {
+        var col = "#04baba";
+        document.getElementById("Random_button").style.backgroundColor= col;
+        }
+    }
+        
+        
+        
+        function autoClick()
+    {
+        
+        var autoClick = Number(localStorage.getItem("autoClick"));
+        if (count_click >= ((autoClick+1) * 12))
+        {
+            count_click = count_click-((autoClick+1) * 12);
+            autoClick = autoClick + 1;
+            localStorage.setItem("autoClick", autoClick);
+            localStorage.setItem("count_click", count_click);
+            document.getElementById("autoClick").innerHTML = autoClick;
+        }
+        
+     }
+
+    /*]]>*/
+    </script> <button id="Random_button" style=
+    "display: inline-block; font-size: 1em; font-weight: 400; line-height: 1.5; margin: 1em 0; text-align: center; border-radius: 50px; padding: 10px 20px; border: 2px solid #6592a7; transition: color .2s ease-in-out; outline: none; background-color: #04baba; color: #ffffff; border-color: #04baba; cursor:pointert;"
+    type="button" onmousedown="autoClick(); change_random_button();" onmouseup="unchange_random_button();check_count_click();" name="Random_button">Buy</button>
+</div>
+<script>
+/* <![CDATA[ */
+        var check_count_click = Number(localStorage.getItem("count_click"));    
+        if(check_count_click<10)
+        {
+        var col = "#6592a7";
+        document.getElementById("Random_button").style.backgroundColor= col;   
+        } 
+/*]]>*/
+</script> 
+<script>
+
+
+
+
+/* <![CDATA[ */
+        function autoClick_check()
+    {
+       
+      var autoClick = Number(localStorage.getItem("autoClick"));
+      document.getElementById("autoClick").innerHTML = autoClick;
+    }
+    window.addEventListener("load", autoClick_check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="autoClick" name="autoClick"></span>
+</div>

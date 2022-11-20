@@ -1,0 +1,72 @@
+<script>
+/* <![CDATA[ */
+
+
+    function click_here()
+    {
+      var count_click = Number(localStorage.getItem("count_click"));
+        
+      count_click++;
+
+      localStorage.setItem("count_click", count_click);
+      document.getElementById("count_click").innerHTML = count_click;
+      
+    }
+    function change_img_click()
+    {
+        var img = "https://i.ibb.co/BsbGddz/click2.png";
+        document.getElementById("myImage").src= img;
+    }    
+    function change_img_anclick()
+    {
+        var img = "https://i.ibb.co/Xx2Mcp9/anclick2.png";
+        document.getElementById("myImage").src= img;
+    }    
+
+
+/*]]>*/
+</script>
+<div style="margin-left: 35%; margin-right: auto">
+    <button type="button" onmousedown="click_here(); change_img_click();" onmouseup="change_img_anclick();" style=
+    "display: flex; width: 300px; vertical-align: top; padding: 0; margin: 0; justify-content: center;"><img id='myImage' src="https://i.ibb.co/Xx2Mcp9/anclick2.png" height="100%" width="100%" align=
+    "center" name="myImage" /></button>
+</div>
+<script>
+/* <![CDATA[ */
+        function check()
+    {
+       
+      var count_click = Number(localStorage.getItem("count_click"));
+      document.getElementById("count_click").innerHTML = count_click;
+    }
+    window.addEventListener("load", check, false);
+/*]]>*/
+</script>
+<div style="margin-left: 0%">
+    <span style=
+    "-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; cursor: text; word-wrap: break-word; font-size: 50px!important; color: #04baba; line-height: 1.55; text-align: center; font-weight: normal; font-style: normal; vertical-align: inherit;"
+    id="count_click" name="count_click"></span>
+</div>
+<script>
+/* <![CDATA[ */
+    var multiplier = 1;
+    
+    var count_click = Number(localStorage.getItem("count_click"));
+    
+    var autoClick = 0;
+    var farms = 0;
+    
+    function timer() {
+        count_click = Number(localStorage.getItem("count_click"));
+        
+        count_click = count_click + autoClick*multiplier;
+        localStorage.setItem("count_click", count_click);
+        
+        
+        count_click = count_click + farms*2*multiplier;
+        localStorage.setItem("count_click", count_click);
+        
+    }
+    setInterval(timer, 10);
+/*]]>*/
+</script>

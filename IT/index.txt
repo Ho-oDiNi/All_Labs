@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML>
+<HEAD>
+  <TITLE>3.3</TITLE>
+</HEAD>
+
+<script>
+  function setCookie(name,value,days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days*24*60*60*1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value  + expires + "; path=/";
+    
+  }
+  
+  function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+  }
+  function deleteCookie(name) {   
+      document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+</script>
+
+<div>
+<script>
+  var check_count = getCookie('count_click');
+	if (check_count == null)
+		setCookie('count_click',"0",7);
+  
+    count_click = Number(getCookie('count_click'));
+
+    function click_here()
+    {
+      count_click++;
+      setCookie('count_click',count_click,7);
+      document.getElementById("count_click").innerHTML = count_click;
+    }
+
+    function check()
+    {
+      alert(count_click);
+    }
+
+    function delete_count()
+    {
+      deleteCookie('count_click',count_click,7);
+    }
+
+  var x = getCookie('name');
+	if (x!=null) {
+    		document.getElementById("hello").innerHTML = "Hello, " + getCookie('name') + "!";
+	}
+	else
+	{
+	 	document.getElementById("hello").innerHTML = "Login";
+	}
+
+</script>
+
+    <a>Input login:</a> <input type="text" id = "priv">
+    <button onclick="setCookie('name',document.getElementById('priv').value,7); "></button>
+    <p id = "hello"></p>
+
+    <button type="button" onClick="click_here()">Click_here</button>
+    <p>Clicks: <a id="count_click"></a></p>
+    <button type="button" onClick="check()">Check</button>
+    <button type="button" onClick="delete_count()">Delete</button>
+
+</div>
+
+</BODY>
+</HTML>

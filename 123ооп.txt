@@ -1,0 +1,248 @@
+#include <SFML/Graphics.hpp>
+#include <iostream>
+
+using namespace sf;
+
+class tPoint {
+private:
+    CircleShape circle;
+    int x;
+    int y;
+    int move;
+    Color color;
+
+public:
+    tPoint()
+    {
+        circle = CircleShape(1);
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        color = random_color();
+    }
+
+    void set_x(int px) {
+        x = px;
+    }
+    void set_y(int py) {
+        y = py;
+    }
+    int get_x() {
+        return x;
+    }
+    int get_y() {
+        return y;
+    }
+    Color random_color() {
+        int pcolor = rand() % 5;
+        switch (pcolor) {
+        case 0:
+            return Color::White;
+        case 1:
+            return Color::Blue;
+        case 2:
+            return Color::Red;
+        case 3:
+            return Color::Green;
+        case 4:
+            return Color::Yellow;
+        }
+    }
+    Color get_color() {
+        return color;
+    }
+    void draw_point(sf::RenderWindow& window) {
+        circle.setFillColor(get_color());
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+    void delete_point(sf::RenderWindow& window) {
+        circle.setFillColor(Color::Black);
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+    void move_directly(sf::RenderWindow& window) {
+        switch (move) {
+        case 0:
+            delete_point(window);
+            set_x(get_x() + 1);
+            draw_point(window);
+            break;
+        case 1:
+            delete_point(window);
+            set_x(get_x() - 1);
+            draw_point(window);
+            break;
+        case 2:
+            delete_point(window);
+            set_y(get_y() + 1);
+            draw_point(window);
+            break;
+        case 3:
+            delete_point(window);
+            set_y(get_y() - 1);
+            draw_point(window);
+            break;
+        }
+        if (get_x() == 0) {
+            move = 0;
+        }
+        if (get_x() == 500) {
+            move = 1;
+        }
+        if (get_y() == 0) {
+            move = 2;
+        }
+        if (get_y() == 500) {
+            move = 3;
+        }
+    }
+};
+
+class tCircle : public  tPoint{
+private:
+    CircleShape circle;
+    int x;
+    int y;
+    int move;
+    int radius;
+    Color color;
+
+public:
+    tCircle()
+    {
+        circle = CircleShape(5);
+        x = rand() % 500;
+        y = rand() % 500;
+        move = rand() % 4;
+        radius = rand() % 5 + 3;
+        color = random_color();
+    }
+    void set_radius(int pradius) {
+        radius = pradius;
+    }
+    int get_radius() {
+        return radius;
+    }
+};
+
+class tTriangle : public  tPoint { 
+private:
+    CircleShape circle;
+protected:
+    int radius = 5;
+public:
+    void set_radius(int pradius) {
+        radius = pradius;
+    }
+    int get_radius() {
+        return radius;
+    }
+    void draw_point(sf::RenderWindow& window) {
+        CircleShape circle(get_radius(), 3);
+        circle.setFillColor(get_color());
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+    void delete_point(sf::RenderWindow& window) {
+        CircleShape circle(get_radius());
+        circle.setFillColor(Color::Black);
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+};
+
+class tSquare : public  tPoint {
+private:
+    CircleShape circle;
+protected:
+    int radius = 5;
+public:
+    void set_radius(int pradius) {
+        radius = pradius;
+    }
+    int get_radius() {
+        return radius;
+    }
+    void draw_point(sf::RenderWindow& window) {
+        CircleShape circle(get_radius(), 4);
+        circle.setFillColor(get_color());
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+    void delete_point(sf::RenderWindow& window) {
+        CircleShape circle(get_radius());
+        circle.setFillColor(Color::Black);
+        circle.setPosition(get_x(), get_y());
+        window.draw(circle);
+    }
+};
+
+class tRectangle : public  tPoint {
+private:
+    RectangleShape rectangle;
+protected:
+    int radius = 5;
+public:
+    void set_radius(int pradius) {
+        radius = pradius;
+    }
+    int get_radius() {
+        return radius;
+    }
+    void draw_point(sf::RenderWindow& window) {
+        RectangleShape rectangle(Vector2f(radius, radius));
+        rectangle.setFillColor(get_color());
+        rectangle.setPosition(get_x(), get_y());
+        window.draw(rectangle);
+    }
+    void delete_point(sf::RenderWindow& window) {
+        RectangleShape rectangle(Vector2f(radius, radius));
+        rectangle.setFillColor(Color::Black);
+        rectangle.setPosition(get_x(), get_y());
+        window.draw(rectangle);
+    }
+};
+
+int main()
+{
+    RenderWindow window(VideoMode(500, 500), "SFML works!");
+
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+        tCircle masPoint[100];
+        for (int i = 0; i < 100; i++) {
+            masPoint[i].draw_point(window);
+        }
+        window.display();
+        int c;
+        std::cin >> c;
+        window.clear();
+        if (c == 1)
+        {
+            while (true)
+                for (int i = 0; i < 100; i++) {
+                    masPoint[i].move_directly(window);
+                    window.display();
+                }
+        }
+        if (c == 2)
+        {
+            while (true)
+                for (int i = 0; i < 100; i++) {
+                    //masPoint[i].move_random(window);
+                    window.display();
+                }
+        }
+
+        getchar();
+    }
+
+    return 0;
+}
